@@ -8,7 +8,7 @@ $app['config'] = $app->share(function(){
 });
 
 $app->get('/', function () use ($app) {
-    return '<form action="/upload" method="POST"><input type="file" name="video"><input type="submit"></form>';
+    return '<form action="/upload" method="post" enctype="multipart/form-data"><input type="file" name="video"><input type="submit"></form>';
 });
 
 $app->post('/upload', function(\Symfony\Component\HttpFoundation\Request $request) use ($app){
